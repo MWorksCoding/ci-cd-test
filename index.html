@@ -8,8 +8,24 @@
 <body>
     <h1>Using Git to FTP Your Project</h1>
     <p>
-        Git has become a version control standard and for good reason. Its ability to branch projects, track and roll back changes makes development MUCH easier!
-    </p>
+        Git has become a version control standard and for good reason. 
+        <br>Its ability to branch projects, track and roll back changes makes development MUCH easier!
+    </p><br>
+    # Setup<br>
+git config git-ftp.url ftp.example.net<br>
+git config git-ftp.user ftp-user<br>
+git config git-ftp.password secr3t<br>
+<br><br>
+# Upload all files<br>
+git ftp init<br>
+<br><br>
+# Or if the files are already there<br>
+git ftp catchup<br>
+<br><br>
+# Work and deploy<br>
+echo "new content" >> index.txt<br>
+git commit index.txt -m "Add new content"<br>
+git ftp push<br>
     
 </body>
 </html>
